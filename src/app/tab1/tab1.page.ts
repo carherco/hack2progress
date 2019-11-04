@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Parque } from 'src/model/parque';
 import { ParquesService } from 'src/app/services/parques.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { DistanciasService } from 'src/app/services/distancias.service';
 
 @Component({
   selector: 'app-tab1',
@@ -10,11 +12,43 @@ import { ParquesService } from 'src/app/services/parques.service';
 export class Tab1Page {
 
   parques: Parque[] = [];
+  position = null;
 
-  constructor(private parquesService: ParquesService) {
+  constructor(
+    private parquesService: ParquesService,
+    private geolocation: Geolocation,
+    private distanciasService: DistanciasService
+  ) {
     this.parquesService.get().subscribe(
-      data => this.parques = data
+      data => {
+        this.parques = data;
+        this.calcularDistancias();
+      }
     );
+
+    this.geolocation.getCurrentPosition().then(
+      data => {
+        this.position = data.coords;
+        console.log(this.position);
+        this.calcularDistancias();
+      }
+    );
+  }
+
+  private calcularDistancias() {
+    if (this.position && this.parques.length > 0) {
+      this.parques = this.parques.map(
+        item => {
+          const distancia = this.distanciasService.calcDistancia(
+            this.position.latitude,
+            this.position.longitude,
+            item.posicion.lat,
+            item.posicion.lon
+          );
+          return { ...item, distancia };
+        }
+      );
+    }
   }
 
 }

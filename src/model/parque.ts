@@ -8,4 +8,5 @@ export interface Parque {
     lon: number
   };
   valoracion: number;
+  distancia?: number;
 }
