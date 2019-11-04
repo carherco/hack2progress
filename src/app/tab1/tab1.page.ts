@@ -18,11 +18,14 @@ export class Tab1Page {
     private parquesService: ParquesService,
     private geolocation: Geolocation,
     private distanciasService: DistanciasService
-  ) {
+  ) {}
+
+  ionViewWillEnter() {
     this.parquesService.get().subscribe(
       data => {
         this.parques = data;
         this.calcularDistancias();
+        this.ordenar();
       }
     );
 
@@ -31,6 +34,7 @@ export class Tab1Page {
         this.position = data.coords;
         console.log(this.position);
         this.calcularDistancias();
+        this.ordenar();
       }
     );
   }
@@ -47,6 +51,14 @@ export class Tab1Page {
           );
           return { ...item, distancia };
         }
+      );
+    }
+  }
+
+  private ordenar() {
+    if (this.position && this.parques.length > 0) {
+      this.parques = this.parques.sort(
+        (a, b) => a.distancia < b.distancia ? -1 : 1
       );
     }
   }

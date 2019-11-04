@@ -8,5 +8,6 @@ export interface Parque {
     lon: number
   };
   valoracion: number;
+  foto?: string;
   distancia?: number;
 }

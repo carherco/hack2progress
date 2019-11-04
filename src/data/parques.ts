@@ -23,6 +23,7 @@ export const PARQUES:  Parque[] = [
     direccion: 'Av. de la Constitución, 52A, 39005 Santander, Cantabria',
     posicion: { lat: 39.9506493, lon: -8.6722865 },
     valoracion: 4.5,
+    foto: 'https://lh5.googleusercontent.com/p/AF1QipM5TCFFsP_v8tP50lkMH1h2MIeGtEpDtuczhRmi=w160-h184-p-k-no',
     _createdOn: '2019-11-04T12: 51: 19.604Z'
   },
   {
@@ -39,6 +40,7 @@ export const PARQUES:  Parque[] = [
     direccion: 'Lugar Jardines Pereda, 1, 39004 Santander, Cantabria',
     posicion: { lat: 39.9431048, lon: -8.6722892 },
     valoracion: 4.2,
+    foto: 'https://lh5.googleusercontent.com/p/AF1QipNbceSzPmL-LzX8FQq7EolfK0P3Nv_fhkiUURlu=w160-h184-p-k-no',
     _createdOn: '2019-11-04T12: 51: 19.603Z'
   },
   {
@@ -55,6 +57,7 @@ export const PARQUES:  Parque[] = [
     direccion: 'Calle Stefan Banic, S/N, 39011 Santander, Cantabria',
     posicion: { lat: 39.9455472, lon:  -8.6722883 },
     valoracion:  3.9,
+    foto: 'https://lh5.googleusercontent.com/p/AF1QipPz1pZlWiaT0lUU1-8RrMQ8nXdQLF5jGr-i7WE8=w160-h184-p-k-no',
     _createdOn:  '2019-11-04T12: 51: 19.602Z'
   }
 ];
