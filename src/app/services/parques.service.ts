@@ -9,10 +9,20 @@ import { environment } from '../../environments/environment';
 })
 export class ParquesService {
 
-  url = environment.api_url;
+  private url = environment.api_url;
+  private parqueSeleccionado: Parque;
+
   constructor(private http: HttpClient) { }
 
   get(): Observable<Parque[]> {
     return this.http.get<Parque[]>(this.url);
+  }
+
+  setParqueSeleccionado(parque: Parque) {
+    this.parqueSeleccionado = parque;
+  }
+
+  getParqueSeleccionado(): Parque {
+    return this.parqueSeleccionado;
   }
 }

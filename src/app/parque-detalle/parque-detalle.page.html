@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Parque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="parque">
+    <ion-card-header>
+      <ion-card-subtitle>{{parque.direccion}}</ion-card-subtitle>
+      <ion-card-title>{{parque.nombre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <img *ngIf="parque.foto" [src]="parque.foto">
+    </ion-card-content>
+
+    <ion-item>
+      <ion-button color="tertiary" slot="start" (click)="volver()">Volver</ion-button>
+      <ion-button *ngIf="!parque.foto" color="primary" slot="end" (click)="subirFoto()">Subir foto</ion-button>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

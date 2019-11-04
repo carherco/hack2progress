@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { PARQUES } from 'src/data/parques';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Parque } from 'src/model/parque';
+import { ParquesService } from 'src/app/services/parques.service';
 
 @Component({
   selector: 'app-tab2',
@@ -10,8 +12,14 @@ import { PARQUES } from 'src/data/parques';
 })
 export class Tab2Page {
 
-  constructor(private http: HttpClient) {
-    this.http.get(environment.api_url).subscribe();
+  parque: Parque;
+
+  constructor(
+    private parquesService: ParquesService,
+    private http: HttpClient,
+    private camara: Camera
+  ) {
+    
   }
 
   add() {
