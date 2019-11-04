@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Parque } from 'src/model/parque';
+import { ParquesService } from 'src/app/services/parques.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  parques: Parque[] = [];
+
+  constructor(private parquesService: ParquesService) {
+    this.parquesService.get().subscribe(
+      data => this.parques = data
+    );
+  }
 
 }
