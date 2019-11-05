@@ -18,6 +18,10 @@ export class ParquesService {
     return this.http.get<Parque[]>(this.url);
   }
 
+  post(parque: Parque) {
+    return this.http.post(this.url, parque);
+  }
+
   setParqueSeleccionado(parque: Parque) {
     this.parqueSeleccionado = parque;
   }
@@ -25,4 +29,6 @@ export class ParquesService {
   getParqueSeleccionado(): Parque {
     return this.parqueSeleccionado;
   }
+
+
 }

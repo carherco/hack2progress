@@ -34,7 +34,6 @@ export class Tab1Page implements OnInit {
     this.geolocation.getCurrentPosition().then(
       data => {
         this.position = data.coords;
-        console.log(this.position);
         this.calcularDistancias();
         this.ordenar();
       }

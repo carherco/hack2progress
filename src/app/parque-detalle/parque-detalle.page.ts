@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ParquesService } from 'src/app/services/parques.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Parque } from 'src/model/parque';
 import { Router } from '@angular/router';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @Component({
   selector: 'app-parque-detalle',
@@ -16,8 +16,8 @@ export class ParqueDetallePage implements OnInit {
   constructor(
     private parquesService: ParquesService,
     private camara: Camera,
-    private router: Router,
     private webview: WebView,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class ParqueDetallePage implements OnInit {
     this.parque = this.parquesService.getParqueSeleccionado();
   }
 
-  subirFoto() {
+  hacerFoto() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camara.DestinationType.FILE_URI,

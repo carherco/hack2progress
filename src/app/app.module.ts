@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Geolocation,
     Camera,
-    WebView
+    WebView,
+    CallNumber
   ],
   bootstrap: [AppComponent]
 })

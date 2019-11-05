@@ -13,17 +13,24 @@ import { ParquesService } from 'src/app/services/parques.service';
 export class Tab2Page {
 
   parque: Parque;
+  mensaje: string;
 
   constructor(
     private parquesService: ParquesService,
     private http: HttpClient,
     private camara: Camera
   ) {
-    
+    this.parque = {
+      nombre: '',
+      direccion: '',
+      posicion: { lat: null, lon: null }
+    }
   }
 
-  add() {
-    // console.log(PARQUES);
-    // this.http.post(environment.api_url, PARQUES).subscribe();
+  guardar() {
+    this.parquesService.post(this.parque).subscribe(
+      respuesta => this.mensaje = 'Parque guardado correctamente',
+      error => this.mensaje = 'Error al guardar el parque'
+    );
   }
 }

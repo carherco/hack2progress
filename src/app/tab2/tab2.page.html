@@ -7,5 +7,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="add()">Añadir</ion-button>
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="parque.nombre"></ion-input>
+  </ion-item>
+      
+  <ion-item>
+    <ion-label position="floating">Dirección</ion-label>
+    <ion-input [(ngModel)]="parque.direccion"></ion-input>
+  </ion-item>
+      
+  <ion-item>
+    <ion-label position="floating">Latitud</ion-label>
+    <ion-input [(ngModel)]="parque.posicion.lat"></ion-input>
+
+    <ion-label position="floating">Longitud</ion-label>
+    <ion-input [(ngModel)]="parque.posicion.lon"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="guardar()">Guardar</ion-button>
 </ion-content>
