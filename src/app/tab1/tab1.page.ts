@@ -69,4 +69,11 @@ export class Tab1Page implements OnInit {
     this.router.navigate(['parque-detalle']);
   }
 
+  borrarParque(parque: Parque) {
+    this.parquesService.delete(parque).subscribe(
+      respuesta => this.parques = this.parques.filter( item => item._id !== parque._id ) ,
+      error => console.log(error)
+    );
+  }
+
 }

@@ -15,16 +15,12 @@ export class Tab2Page {
   parque: Parque;
   mensaje: string;
 
-  constructor(
-    private parquesService: ParquesService,
-    private http: HttpClient,
-    private camara: Camera
-  ) {
+  constructor(private parquesService: ParquesService, private camara: Camera) {
     this.parque = {
       nombre: '',
       direccion: '',
       posicion: { lat: null, lon: null }
-    }
+    };
   }
 
   guardar() {

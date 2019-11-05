@@ -22,6 +22,10 @@ export class ParquesService {
     return this.http.post(this.url, parque);
   }
 
+  delete(parque: Parque) {
+    return this.http.delete(this.url + '/' + parque._id);
+  }
+
   setParqueSeleccionado(parque: Parque) {
     this.parqueSeleccionado = parque;
   }

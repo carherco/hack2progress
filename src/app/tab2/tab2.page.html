@@ -8,6 +8,10 @@
 
 <ion-content>
 
+  <ion-item *ngIf="mensaje">
+    <ion-badge>{{ mensaje }}</ion-badge>
+  </ion-item>
+
   <ion-item>
     <ion-label position="floating">Nombre</ion-label>
     <ion-input [(ngModel)]="parque.nombre"></ion-input>
@@ -27,4 +31,5 @@
   </ion-item>
 
   <ion-button (click)="guardar()">Guardar</ion-button>
+
 </ion-content>
