@@ -14,7 +14,7 @@ export class ParquesService {
 
   constructor(private http: HttpClient) { }
 
-  get(): Observable<Parque[]> {
+  get(): any {
     return this.http.get<Parque[]>(this.url);
   }
 
