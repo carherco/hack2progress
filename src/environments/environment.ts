@@ -7,6 +7,7 @@ export const environment = {
   api_url: 'https://jsonbox.io/box_b7be481ac962870ba73b/h2p_parques'
 };
 
+// position = {latitude: 43.4738577, longitude: -3.804267};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
